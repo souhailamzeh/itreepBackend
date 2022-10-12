@@ -5,6 +5,10 @@ require("dotenv").config();
 const PORT = 5000;
 
 const authRoutes = require("./routes/users");
+const score = require("./routes/sections");
+const etablisement = require("./routes/etablisement");
+
+
 
 mongoose
   .connect(process.env.MONGO_URI, {
@@ -32,6 +36,10 @@ app.get("/ping", (req, res) => {
 });
 
 app.use("/users", authRoutes);
+app.use("/section", score);
+app.use("/etablisement", etablisement);
+
+
 
 app.listen(PORT, () => {
   console.log("Server started listening on PORT : " + PORT);
