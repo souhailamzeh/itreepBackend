@@ -69,29 +69,54 @@ exports.sectionGetAll = async (req, res) => {
   };
 
 
- /*  exports.sectionGetByName= async (req, res) => {
+   exports.sectionGetByName= async (req, res) => {
    
        
-    const styleName= req.body.nameSection
-    console.log("naaame",styleName)
-       
-            async (req, res, next) => {
-                try {
-                 let style = await Section.findByName(req.body.nameSection);
-                 if (!style) {
-                  return res.send()
-                 }
-           
-          } catch (err) {
-            console.error("fetch-referred-error.", err);
-            return res.status(500).json({
-              error: true,
-              message: err.message,
-            });
-          }
+    try {
+      const { name } = req.body;
+      if (!name) {
+        return res.send({
+          status: 400,
+          error: true,
+          message: "Cannot be processed",
+        });
+      }
+      const user = await section.findOne({
+        nameSection: name,
+      });
+      if (!user) {
+        return res.send({
+          success: true,
+          message:
+            "Section not found",
+        });
+      }
+  
+     
+  
+     /*  if (response.error) {
+        return res.status(500).json({
+          error: true,
+          message: "Couldn't send mail. Please try again later.",
+        });
+      } */
+  
       
-  };
-  } */
+  
+      return res.send({
+        success: true,
+        data:user,
+        message:
+          "succes",
+      });
+    } catch (error) {
+      console.error("forgot-password-error", error);
+      return res.status(500).json({
+        error: true,
+        message: error.message,
+      });
+    }
+  } 
 
 
 
