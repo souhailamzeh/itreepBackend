@@ -9,7 +9,7 @@ const SectionController = require("../src/Score/section.controller");
 
 router.post("/SectionPost", cleanBody, SectionController.SectionPost);
 router.get("/sectionGetAll", SectionController.sectionGetAll);
-//router.get("/sectionGetByName", SectionController.sectionGetByName);
+router.post("/sectionGetByName", SectionController.sectionGetByName);
 
 
 
