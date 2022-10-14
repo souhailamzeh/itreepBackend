@@ -4,11 +4,11 @@ const router = express.Router();
 const cleanBody = require("../middlewares/cleanbody");
 const { validateToken } = require("../middlewares/validateToken");
 
-const EtablisementController = require("../src/Etablisement/etablisement.controller");
+const filiereController = require("../src/Filiere/filiere.controller");
 
 
-router.post("/EtablisementPost", cleanBody, EtablisementController.EtablisementPost);
-router.get("/etablisementGetAll", EtablisementController.etablisementGetAll);
+router.post("/filierePost", cleanBody, filiereController.filierePost);
+router.get("/filiereGetAll", filiereController.filiereGetAll);
 //router.get("/sectionGetByName", SectionController.sectionGetByName);
 
 

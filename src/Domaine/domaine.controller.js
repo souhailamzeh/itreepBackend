@@ -5,8 +5,8 @@ const { customAlphabet: generate } = require("nanoid");
 
 
 
-const Etablisement = require("./etablisement.model");
-const etablisement = require("./etablisement.model");
+const domaine = require("./domaine.model");
+
 
 
 const CHARACTER_SET =
@@ -24,7 +24,7 @@ const referralCode = generate(CHARACTER_SET, REFERRAL_CODE_LENGTH);
   }); */
 
 
-exports.EtablisementPost = async (req, res) => {
+exports.domainePost = async (req, res) => {
   try {
     const result = req.body
     if (result.error) {
@@ -39,9 +39,9 @@ exports.EtablisementPost = async (req, res) => {
  
 
     const id = uuid(); //Generate unique id for the user.
-     result.etablisementId = id;
-    const newetablisement= new Etablisement(result);
-    await newetablisement.save();
+     result.domaineId = id;
+    const newdomaine = new domaine (result);
+    await newdomaine .save();
 
     return res.status(200).json({
       success: true,
@@ -58,8 +58,8 @@ exports.EtablisementPost = async (req, res) => {
 };
 
 
-  exports.etablisementGetAll = async (req, res) => {
-    etablisement.find(function(err, data) {
+  exports.domaineGetAll = async (req, res) => {
+    domaine.find(function(err, data) {
         if(err){
             console.log(err);
         }
@@ -67,8 +67,8 @@ exports.EtablisementPost = async (req, res) => {
             res.send(data);
         }
     });
-  };  
-
+  };   
+ 
 
  /*  exports.sectionGetByName= async (req, res) => {
    

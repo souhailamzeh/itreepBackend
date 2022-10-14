@@ -6,7 +6,12 @@ const PORT = 5000;
 
 const authRoutes = require("./routes/users");
 const score = require("./routes/sections");
-const etablisement = require("./routes/etablisement");
+const Etablisement = require("./routes/etablisement");
+const filiere = require("./routes/filiere");
+const domaine = require("./routes/domaine");
+const parcours = require("./routes/parcours");
+
+
 
 
 
@@ -37,7 +42,14 @@ app.get("/ping", (req, res) => {
 
 app.use("/users", authRoutes);
 app.use("/section", score);
-app.use("/etablisement", etablisement);
+app.use("/etablisement", Etablisement);
+app.use("/filiere", filiere);
+app.use("/domaine", domaine);
+app.use("/parcours", parcours);
+
+
+
+
 
 
 
