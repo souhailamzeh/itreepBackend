@@ -4,11 +4,11 @@ const router = express.Router();
 const cleanBody = require("../middlewares/cleanbody");
 const { validateToken } = require("../middlewares/validateToken");
 
-const EtablisementController = require("../src/Etablisement/etablisement.controller");
+const parcoursController = require("../src/Parcours/parcours.controller");
 
 
-router.post("/EtablisementPost", cleanBody, EtablisementController.EtablisementPost);
-router.get("/etablisementGetAll", EtablisementController.etablisementGetAll);
+router.post("/parcoursPost", cleanBody, parcoursController.parcoursPost);
+router.get("/parcoursGetAll", parcoursController.parcoursGetAll);
 //router.get("/sectionGetByName", SectionController.sectionGetByName);
 
 
