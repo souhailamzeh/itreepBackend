@@ -10,7 +10,8 @@ const Etablisement = require("./routes/etablisement");
 const filiere = require("./routes/filiere");
 const domaine = require("./routes/domaine");
 const parcours = require("./routes/parcours");
-
+const associationfe = require("./routes/associationfe");
+const associationpe = require("./routes/associationpe");
 
 
 
@@ -46,6 +47,8 @@ app.use("/etablisement", Etablisement);
 app.use("/filiere", filiere);
 app.use("/domaine", domaine);
 app.use("/parcours", parcours);
+app.use("/associationfe", associationfe);
+app.use("/associationpe", associationpe);
 
 
 
