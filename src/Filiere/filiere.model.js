@@ -7,8 +7,7 @@ const filiereSchema = new Schema(
   {
     filiereId: { type: String, unique: true, required: true },
     namefiliere: { type: String, unique: true, required: true },
-   
-   
+    etablisementId: { type: String, unique: true, required: true },
   },
   {
     timestamps: {
