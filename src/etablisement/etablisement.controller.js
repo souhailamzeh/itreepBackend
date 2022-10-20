@@ -27,6 +27,7 @@ const referralCode = generate(CHARACTER_SET, REFERRAL_CODE_LENGTH);
 exports.EtablisementPost = async (req, res) => {
   try {
     const result = req.body
+
     if (result.error) {
       console.log(result.error.message);
       return res.json({
@@ -40,9 +41,10 @@ exports.EtablisementPost = async (req, res) => {
 
     const id = uuid(); //Generate unique id for the user.
      result.etablisementId = id;
+     console.log(result)
+
     const newetablisement= new Etablisement(result);
     await newetablisement.save();
-
     return res.status(200).json({
       success: true,
       message: "Section Saved",

@@ -5,9 +5,10 @@ const Schema = mongoose.Schema;
 
 const parcoursSchema = new Schema(
   {
-    parcoursId: { type: String, unique: true, required: true },
+    parcoursId: { type: String, required: true },
     nameparcours: { type: String, unique: true, required: true },
-   
+    typeBac: [{type:{ type: String, required: true }, score:{ type: String, unique: true, required: true }}],
+
    
   },
   {
