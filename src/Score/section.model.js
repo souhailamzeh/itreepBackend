@@ -7,7 +7,7 @@ const sectionSchema = new Schema(
   {
     sectionId: { type: String, unique: true, required: true },
     nameSection: { type: String, unique: true, required: true },
-     matieres: [{nameMatiere:{ type: String, required: true }, coff:{ type: Number, unique: true, required: true }}],
+    matieres: [{nameMatiere:{ type: String, required: true }, coff:{ type: Number, unique: true, required: true }}],
    
   },
   {
