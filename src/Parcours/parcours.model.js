@@ -6,8 +6,8 @@ const Schema = mongoose.Schema;
 const parcoursSchema = new Schema(
   {
     parcoursId: { type: String, required: true },
-    nameparcours: { type: String, unique: true, required: true },
-    typeBac: [{type:{ type: String, required: true }, score:{ type: String, unique: true, required: true }}],
+    nameparcours:[String],
+    typeBac: [{type:{ type: String, required: false }, score:{ type: String,  required: true }}],
 
    
   },
