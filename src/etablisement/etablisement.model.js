@@ -23,7 +23,8 @@ const EtablisementSchema = new Schema(
   }
 );
 
-const etablisement = mongoose.model("etablisement", EtablisementSchema);
+const etablisement =mongoose.models.etablisement ||  mongoose.model("etablisement", EtablisementSchema);
+
 module.exports = etablisement;
 
 

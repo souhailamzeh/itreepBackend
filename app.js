@@ -12,6 +12,10 @@ const domaine = require("./routes/domaine");
 const parcours = require("./routes/parcours");
 const associationfe = require("./routes/associationfe");
 const associationpe = require("./routes/associationpe");
+const simpleFiltring = require("./routes/Filtring/simple");
+
+
+
 
 
 
@@ -49,10 +53,8 @@ app.use("/domaine", domaine);
 app.use("/parcours", parcours);
 app.use("/associationfe", associationfe);
 app.use("/associationpe", associationpe);
-
-
-
-
+app.use('/simpleFiltring',simpleFiltring);
+//app.post('/advencedFiltring',advencedFiltring); //new user
 
 
 

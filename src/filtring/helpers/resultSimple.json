@@ -1,0 +1,30 @@
+{
+   
+      "parcours": 
+       [ 
+        {
+          
+          "infoParcour": [
+           
+          ],
+          "etablissments": 
+            {
+              "infoEtablissment": [
+                
+              ],
+              "Filieres": 
+                {
+                  "infoFiliere": [
+                   
+                  ],
+                  "domaine": [
+                    
+                  ]
+                }
+              
+            }
+          
+        }]
+      
+    
+  }
