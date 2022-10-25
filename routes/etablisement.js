@@ -9,6 +9,7 @@ const EtablisementController = require("../src/Etablisement/etablisement.control
 
 router.post("/EtablisementPost", cleanBody, EtablisementController.EtablisementPost);
 router.get("/etablisementGetAll", EtablisementController.etablisementGetAll);
+
 //router.get("/sectionGetByName", SectionController.sectionGetByName);
 
 
