@@ -5,14 +5,13 @@ require("dotenv").config();
 const PORT = 5000;
 
 const authRoutes = require("./routes/users");
-const score = require("./routes/sections");
-const Etablisement = require("./routes/etablisement");
-const filiere = require("./routes/filiere");
-const domaine = require("./routes/domaine");
-const parcours = require("./routes/parcours");
-const associationfe = require("./routes/associationfe");
-const associationpe = require("./routes/associationpe");
-const simpleFiltring = require("./routes/Filtring/simple");
+const centrecamping = require("./routes/camping");
+const randonne = require("./routes/randonne");
+const reservationcentre = require("./routes/reservationcentre");
+const reservationrandonne = require("./routes/reservationrandonne");
+const favorie = require("./routes/favorie");
+
+
 
 
 
@@ -22,7 +21,7 @@ const simpleFiltring = require("./routes/Filtring/simple");
 
 mongoose
   .connect(process.env.MONGO_URI, {
-    dbName: "orienation",
+    dbName: "itreep",
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -46,14 +45,11 @@ app.get("/ping", (req, res) => {
 });
 
 app.use("/users", authRoutes);
-app.use("/section", score);
-app.use("/etablisement", Etablisement);
-app.use("/filiere", filiere);
-app.use("/domaine", domaine);
-app.use("/parcours", parcours);
-app.use("/associationfe", associationfe);
-app.use("/associationpe", associationpe);
-app.use('/simpleFiltring',simpleFiltring);
+app.use("/camping", centrecamping);
+app.use("/randonne", randonne);
+app.use("/resevationcentre", reservationcentre);
+app.use("/resevationrandonne", reservationrandonne);
+app.use("/favorie", favorie);
 //app.post('/advencedFiltring',advencedFiltring); //new user
 
 

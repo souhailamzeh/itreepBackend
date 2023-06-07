@@ -5,8 +5,8 @@ const { customAlphabet: generate } = require("nanoid");
 
 
 
-const Section = require("./section.model");
-const section = require("./section.model");
+const favorie = require("./favorie.model");
+
 
 const CHARACTER_SET =
   "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -23,7 +23,7 @@ const referralCode = generate(CHARACTER_SET, REFERRAL_CODE_LENGTH);
   }); */
 
 
-exports.SectionPost = async (req, res) => {
+exports.favoriePost = async (req, res) => {
   try {
     const result = req.body
     if (result.error) {
@@ -38,13 +38,13 @@ exports.SectionPost = async (req, res) => {
  
 
     const id = uuid(); //Generate unique id for the user.
-     result.sectionId = id;
-    const newSection= new Section(result);
-    await newSection.save();
+     result.favorieId = id;
+    const newfavorie= new favorie(result);
+    await newfavorie.save();
 
     return res.status(200).json({
       success: true,
-      message: "Section Saved",
+      message: "favorie Saved",
       
     });
   } catch (error) {
@@ -57,8 +57,8 @@ exports.SectionPost = async (req, res) => {
 };
 
 
-exports.sectionGetAll = async (req, res) => {
-    Section.find(function(err, data) {
+exports.favorieGetAll = async (req, res) => {
+    favorie.find(function(err, data) {
         if(err){
             console.log(err);
         }
@@ -69,7 +69,7 @@ exports.sectionGetAll = async (req, res) => {
   };
 
 
-   exports.sectionGetByName= async (req, res) => {
+   exports.favorieGetByName= async (req, res) => {
    
        
     try {
@@ -81,14 +81,14 @@ exports.sectionGetAll = async (req, res) => {
           message: "Cannot be processed",
         });
       }
-      const user = await section.findOne({
-        nameSection: name,
+      const user = await favorie.findOne({
+        namefavorie: name,
       });
       if (!user) {
         return res.send({
           success: true,
           message:
-            "Section not found",
+            "favorie not found",
         });
       }
   
