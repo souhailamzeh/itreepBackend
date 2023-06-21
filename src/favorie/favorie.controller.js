@@ -23,9 +23,12 @@ const referralCode = generate(CHARACTER_SET, REFERRAL_CODE_LENGTH);
   }); */
 
 
-exports.favoriePost = async (req, res) => {
+exports.favoriePost = async (req, res ) => {
+
   try {
-    const result = req.body
+    const result = req.body.data
+     console.log("teeeest",result)
+
     if (result.error) {
       console.log(result.error.message);
       return res.json({
@@ -92,16 +95,6 @@ exports.favorieGetAll = async (req, res) => {
         });
       }
   
-     
-  
-     /*  if (response.error) {
-        return res.status(500).json({
-          error: true,
-          message: "Couldn't send mail. Please try again later.",
-        });
-      } */
-  
-      
   
       return res.send({
         success: true,
@@ -118,7 +111,33 @@ exports.favorieGetAll = async (req, res) => {
     }
   } 
 
-
+  exports.deleteFavorie = async (req, res) => {
+    
+    try {
+      const favorieId = req.params.id;
+      console.log("teeeest",favorieId)
+  
+      // Logique de suppression de l'élément favorie avec l'ID spécifié
+      // Remplacez cela par votre propre logique de suppression
+  
+      // Exemple de code pour supprimer l'élément favorie de la base de données
+      await favorie.findByIdAndDelete(favorieId);
+  
+      // Exemple de succès de suppression
+      return res.status(200).json({
+        success: true,
+        message: "favorie supprimé avec succès",
+      });
+    } catch (error) {
+      console.log(error)
+      console.error("delete-error", error);
+      return res.status(500).json({
+        error: true,
+        message: "Impossible de supprimer",
+      });
+    }
+  };
+  
 
 
 

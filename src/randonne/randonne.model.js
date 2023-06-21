@@ -11,6 +11,9 @@ const randonneSchema = new Schema(
     imagerandonne: { type: String, unique: true, required: true },
     tarifrandonne: { type: String, unique: true, required: true },
     ratingrandonne: { type: String, unique: true, required: true },
+    oldtarif: { type: String, unique: true, required: true },
+    description: { type: String, unique: true, required: true },
+    activite: { type: String, unique: true, required: true },
   },
   {
     timestamps: {

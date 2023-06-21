@@ -1,6 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+var cors = require('cors')
+
 require("dotenv").config();
 const PORT = 5000;
 
@@ -37,6 +39,11 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(cors({
+  origin: '*', 
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS','PATCH'],
+  allowedHeaders: ['Content-Type']
+}));
 app.get("/ping", (req, res) => {
   return res.send({
     error: false,

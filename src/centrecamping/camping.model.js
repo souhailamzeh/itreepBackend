@@ -11,6 +11,10 @@ const campingSchema = new Schema(
     imagecentre: { type: String, unique: true, required: true },
     tarifcentre: { type: String, unique: true, required: true },
     ratingcentre: { type: String, unique: true, required: true },
+    oldratingcentre: { type: String, unique: true, required: true },
+    description: { type: String, unique: true, required: true },
+    activite: { type: String, unique: true, required: true },
+
   },
   {
     timestamps: {
