@@ -13,7 +13,8 @@ const campingSchema = new Schema(
     ratingcentre: { type: String, unique: true, required: true },
     oldratingcentre: { type: String, unique: true, required: true },
     description: { type: String, unique: true, required: true },
-    activite: { type: String, unique: true, required: true },
+    activite: { type: Array, unique: true, required: true },
+    Category: { type: String, unique: true, required: true },
 
   },
   {
