@@ -5,16 +5,7 @@ const Schema = mongoose.Schema;
 
 const randonneSchema = new Schema(
   {
-    randonneId: { type: String, unique: true, required: true },
-    namerandonne: { type: String, unique: true, required: true },
-    adresserandonne: { type: String, unique: true, required: true },
-    imagerandonne: { type: String, unique: true, required: true },
-    tarifrandonne: { type: String, unique: true, required: true },
-    ratingrandonne: { type: String, unique: true, required: true },
-    oldtarif: { type: String, unique: true, required: true },
-    description: { type: String, unique: true, required: true },
-    activite: { type: String, unique: true, required: true },
-    Category: { type: String, unique: true, required: true },
+   git
   },
   {
     timestamps: {
