@@ -13,7 +13,7 @@ const randonneSchema = new Schema(
     ratingrandonne: { type: String, unique: true, required: true },
     oldtarif: { type: String, unique: true, required: true },
     description: { type: String, unique: true, required: true },
-    activite: { type: String, unique: true, required: true },
+    activite: { type: Array, unique: true, required: true },
     Category: { type: String, unique: true, required: true },
   },
   {
