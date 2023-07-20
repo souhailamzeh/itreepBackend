@@ -13,6 +13,7 @@ const reservationcentre = require("./routes/reservationcentre");
 const reservationrandonne = require("./routes/reservationrandonne");
 const favorie = require("./routes/favorie");
 const meteo = require("./routes/meteo");
+const matriel = require("./routes/matriel");
 
 
 
@@ -59,6 +60,7 @@ app.use("/resevationcentre", reservationcentre);
 app.use("/resevationrandonne", reservationrandonne);
 app.use("/favorie", favorie);
 app.use("/meteo", meteo);
+app.use("/matriel", matriel);
 //app.post('/advencedFiltring',advencedFiltring); //new user
 
 
